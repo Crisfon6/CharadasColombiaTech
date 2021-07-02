@@ -1,1 +1,26 @@
-<p>person works!</p>
+<div class="flip-card" (click)="flip($event)">
+  <div class="flip-card-inner">
+    <div class="card-front">
+      <div>
+        <img src="{{ dataUser.imgUrl }}" class="img" alt="" />
+        <h5 class="name">{{ dataUser.name }}</h5>
+      </div>
+    </div>
+    <div class="card-back">
+      <h4>Description</h4>
+      <ul class="">
+        <li class="">Name: {{ dataUser.name }}</li>
+        <li class="">eyes: {{ dataUser.eyes }}</li>
+        <li class="">mouth: {{ dataUser.mouth }}</li>
+        <li class="">skin: {{ dataUser.skin }}</li>
+        <li class="">nose: {{ dataUser.nose }}</li>
+        <li class="">ear: {{ dataUser.ear }}</li>
+        <li class="">gender: {{ dataUser.gender }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="select">
+  <button class="btn btn-primary" (click)="seleccion(dataUser.id)">{{dataUser.name}}</button>
+</div>

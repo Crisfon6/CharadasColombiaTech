@@ -4,7 +4,7 @@ import { GamingComponent } from './gaming/gaming.component';
 import { HomeComponent } from './home/home.component';
 import { RoomPlayComponent } from './room-play/room-play.component';
 import { RoomComponent } from './room/room.component';
-
+import { AskComponent } from "./ask/ask.component";
 const routes: Routes = [
   {path:'home',component:HomeComponent},
 {path:'room',component:RoomComponent},
@@ -12,6 +12,9 @@ const routes: Routes = [
 {path: 'game/:id/:player',component:RoomPlayComponent},
 
 ];
+
+
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

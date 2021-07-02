@@ -18,6 +18,7 @@ import { GamingComponent } from './gaming/gaming.component';
 
 const config : SocketIoConfig = {url: environment.baseUrl,options: {}};
 
+
 @NgModule({
   declarations: [
     AppComponent,
