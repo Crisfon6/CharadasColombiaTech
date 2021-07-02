@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PersonComponent } from './person/person.component';
 import { AskComponent } from './ask/ask.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
