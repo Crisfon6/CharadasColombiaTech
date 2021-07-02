@@ -1,1 +1,10 @@
-<p>dashboard works!</p>
+<div class="title">
+  <h1>Un jueguito muy cheveron</h1>
+</div>
+<div class="dybo">
+  <div class="mycont">
+    <div *ngFor="let user of dataUser">
+      <app-person [dataUser]="user"> </app-person>
+    </div>
+  </div>
+</div>
