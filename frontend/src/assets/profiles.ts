@@ -1,5 +1,6 @@
 export const profiles = [
   {
+    id: 1,
     name: 'Andres',
     eyes: 'black',
     mouth: 'big',
@@ -10,6 +11,7 @@ export const profiles = [
     imgUrl: 'assets/andres.png',
   },
   {
+    id: 2,
     name: 'Cristian',
     eyes: 'black',
     mouth: 'middle',
@@ -17,9 +19,10 @@ export const profiles = [
     nose: 'big',
     ear: 'little',
     gender: 'male',
-    imgUrl: 'assets/andres.png',
+    imgUrl: 'assets/cristian.png',
   },
   {
+    id: 3,
     name: 'Camilo',
     eyes: 'black',
     mouth: 'little',
@@ -27,9 +30,10 @@ export const profiles = [
     nose: 'big',
     ear: 'big',
     gender: 'male',
-    imgUrl: 'assets/andres.png',
+    imgUrl: 'assets/camilo.png',
   },
   {
+    id: 4,
     name: 'Ivan',
     eyes: 'brown',
     mouth: 'big',
@@ -37,9 +41,10 @@ export const profiles = [
     nose: 'middle',
     ear: 'none',
     gender: 'male',
-    imgUrl: 'assets/andres.png',
+    imgUrl: 'assets/ivan.png',
   },
   {
+    id: 5,
     name: 'Sergio',
     eyes: 'black',
     mouth: 'little',
@@ -47,6 +52,6 @@ export const profiles = [
     nose: 'little',
     ear: 'middle',
     gender: 'male',
-    imgUrl: 'assets/andres.png',
+    imgUrl: 'assets/sergio.png',
   },
 ];

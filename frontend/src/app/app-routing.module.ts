@@ -3,12 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AskComponent } from "./ask/ask.component";
 
-const routes: Routes = [
-  {
-    path: 'ask',
-    component: AskComponent,
-  }
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { questions } from '../../assets/question';
+import { GameService } from "../services/game.service";
 
 @Component({
   selector: 'app-ask',
@@ -11,9 +12,12 @@ export class AskComponent implements OnInit {
   public interval: any;
   public message: boolean;
   public question: string;
+  
   @Input() usersData: any;
 
-  constructor() {
+  @Output() newItemEvent = new EventEmitter<string>();
+  
+  constructor(private gameServ: GameService) {
     this.timeLeft = 100;
     this.message = true;
     this.question = '';
@@ -23,6 +27,7 @@ export class AskComponent implements OnInit {
     this.startTimer();
     let n = Math.floor(Math.random() * questions.length);
     this.question = questions[n].q;
+    this.newItemEvent.emit(questions[n].ans.toString())
   }
 
   startTimer() {
@@ -34,4 +39,5 @@ export class AskComponent implements OnInit {
       }
     }, 150);
   }
+
 }
