@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import {Socket} from 'ngx-socket-io';
 import {map} from 'rxjs/operators';
-import { Room } from '../models/room.model';
 @Injectable({
   providedIn: 'root'
 })
 export class SocketService {
-  currentRoom =this.socket.fromEvent<Room>('room');
+  currentRoom =this.socket.fromEvent<any>('room');
   rooms = this.socket.fromEvent<any[]>('rooms');
 
   constructor(

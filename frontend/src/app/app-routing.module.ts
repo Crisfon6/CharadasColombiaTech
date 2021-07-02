@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GamingComponent } from './gaming/gaming.component';
-import { HomeComponent } from './home/home.component';
-import { RoomPlayComponent } from './room-play/room-play.component';
-import { RoomComponent } from './room/room.component';
 import { AskComponent } from "./ask/ask.component";
-const routes: Routes = [
-  {path:'home',component:HomeComponent},
-{path:'room',component:RoomComponent},
-{path:'gaming/:roomId/:player',component:GamingComponent},
-{path: 'game/:id/:player',component:RoomPlayComponent},
+import { LobbyComponent } from './lobby/lobby.component';
+import { RoomComponent } from './room/room.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
+
+const routes: Routes = [
+  {path: '', component:LobbyComponent},
+{path:'lobby',component:LobbyComponent},
+{path: 'room/:id/:player',component:RoomComponent},
+{path:'game/:id/:player',component:DashboardComponent},
+{path: '**', redirectTo:'lobby',pathMatch:'full'},
 ];
 
 
-const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

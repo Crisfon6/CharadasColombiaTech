@@ -1,15 +1,10 @@
 <h1>Lobby</h1>
-<h2>Create room</h2>
-<form [formGroup]="form">
-
-    <input type="text" name="" id="" formControlName="name">
-    <button [disabled]="!form.valid" (click)="send()">Create room</button>
-</form>
-<hr>
-<h2>Create User</h2>
-
-<input #username type="text" name="" id="">
-<h4>Rooms</h4>
-<button *ngFor="let room of rooms | async" (click)="go(room,username)">
-    {{room.id}}
-</button>
+<ul *ngIf="!isLoading">
+    <li *ngFor="let player of room.players  ">
+        {{player.player }}
+        <div *ngIf="!player.active">Die</div>
+        <div *ngIf="player.active"> Live</div>
+        <!-- <button (click)="wrong()"> wrong</button> -->
+    </li>
+</ul>
+<button (click)="start()">Start</button>
