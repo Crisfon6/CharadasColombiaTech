@@ -12,14 +12,6 @@ export class PersonComponent implements OnInit {
   ngOnInit(): void {}
 
   flip(event: any) {
-    // event.srcElement.classList.toggle('myflip');
-    // console.log(
-    //   'PersonComponent ~ event.srcElement.classList',
-    //   event.srcElement.classList
-    // );
-
     event.path[4].classList.toggle('myflip');
-
-    console.log('PersonComponent ~ event', event);
   }
 }
