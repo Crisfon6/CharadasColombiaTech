@@ -1,22 +1,22 @@
 export const questions = [
   {
-    q: '¿Quien es negro?',
+    q: '¿es negro?',
     ans: 1,
   },
   {
-    q: '¿Quien es blanco?',
+    q: '¿es blanco?',
     ans: 2,
   },
   {
-    q: '¿Quien tiene el cabello corto?',
+    q: '¿tiene el cabello corto?',
     ans: 3,
   },
   {
-    q: '¿A quién se le va la luz?',
+    q: '¿Se le va la luz?',
     ans: 4,
   },
   {
-    q: '¿Quien come coco?',
+    q: '¿come coco?',
     ans: 5,
   },
 ];

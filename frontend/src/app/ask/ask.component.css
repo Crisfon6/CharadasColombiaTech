@@ -1,25 +1,31 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
-    padding: 1%;
-    width: 100%;
-    max-width: 1000px;
-    border: 2px solid #7c36ff;
-    border-radius: 15px;
+  padding: 1%;
+  width: 100%;
+  max-width: 1000px;
+  border: 2px solid #7c36ff;
+  border-radius: 15px;
 }
 
 .progress {
-    border-radius: 5px;
-    height: 5px;
+  border-radius: 5px;
+  height: 5px;
 }
 
 .question {
-    padding: 2%;
+  padding: 2%;
 }
 
 .progress-bar {
-    background-color: #823eff;
+  background-color: #823eff;
+}
+
+.asks {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
