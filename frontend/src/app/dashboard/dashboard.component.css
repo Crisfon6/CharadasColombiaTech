@@ -1,0 +1,21 @@
+.mycont {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+.dybo {
+  display: flex;
+
+  justify-content: center;
+
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.title {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
