@@ -3,6 +3,7 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 
@@ -19,7 +20,6 @@ io.on("connection", socket => {
         previousId = currentId;
     }
     socket.on('createRoom', roomId => {
-        console.log('CREATE ROOM', roomId);
         rooms.push({ id: roomId, players: [] });
         safeJoin(roomId);
         // io.emit('rooms', rooms.map(el => el.id));
@@ -27,13 +27,11 @@ io.on("connection", socket => {
         io.emit('rooms', rooms);
     });
     socket.on('getRoom', roomId => {
-        console.log('GETROOM', roomId);
         safeJoin(roomId);
         let room = rooms.find(el => el.id === roomId);
         socket.emit('room', room);
     });
     socket.on('addPlayer', player => {
-        console.log('ASDD PALYER', player);
         rooms.forEach((el, i) => {
             if (el.id === player.idRoom) {
                 let players = el.players.map(el => el.player);
@@ -49,19 +47,16 @@ io.on("connection", socket => {
         // socket.emit('room', player);
     });
     socket.on('badResponse', data => {
-        console.log('bad PALYER', data);
         rooms.forEach((el, i) => {
             if (el.id === data.idRoom) {
 
                 el.players.forEach((player, iPlayer) => {
                     if (player.player === data.player) {
-                        console.log('PLAYER', rooms[i].players[iPlayer])
                         rooms[i].players[iPlayer].active = false;
                     }
                 })
             }
         });
-        console.log('FIN', rooms[0].players);
         let room = rooms.find(el => el.id === data.idRoom);
         socket.to(room.id).emit("room", room);
         io.emit("room", room);
@@ -81,9 +76,11 @@ io.on("connection", socket => {
     });
     io.emit("rooms", rooms);
 
-    console.log(`Socket ${socket.id} has connected`);
 
 });
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public/index.html'));
+})
 http.listen(process.env.PORT, () => {
     console.log('Listening on port:', process.env.PORT);
 });
