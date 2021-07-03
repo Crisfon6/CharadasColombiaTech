@@ -1,15 +1,33 @@
-<h1>Lobby</h1>
-<h2>Create room</h2>
-<form [formGroup]="form">
+<div class="container card">
+  <div class="Lobby">
+    <h1>Lobby</h1>
+    <h2>Create room</h2>
+    <form [formGroup]="form">
+      <input class="input" type="text" name="" id="" formControlName="name" />
+    </form>
+    <button [disabled]="!form.valid" class="btn btn-primary" (click)="send()">
+      Create room
+    </button>
+    <hr />
 
-    <input type="text" name="" id="" formControlName="name">
-    <button [disabled]="!form.valid" (click)="send()">Create room</button>
-</form>
-<hr>
-<h2>Create User</h2>
+    <h2>Create User</h2>
+    <div>
+      <input [(ngModel)]="data.user" #username type="text" name="" id="" />
 
-<input #username type="text" name="" id="">
-<h4>Rooms</h4>
-<button *ngFor="let room of rooms | async" (click)="go(room,username)">
-    {{room.id}}
-</button>
+      <h4>Rooms</h4>
+      <div >
+        <div class="salas">
+          <button 
+            [disabled]="!data.user"
+            class="btn btn-sala btn-primary"
+            *ngFor="let room of rooms | async"
+            (click)="go(room, username)"
+          >
+            {{ room.id }}
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

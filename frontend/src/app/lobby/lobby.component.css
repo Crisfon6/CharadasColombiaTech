@@ -1,0 +1,35 @@
+.Lobby {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 50%;
+  margin-top: 20px;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn {
+  width: 20%;
+}
+
+.btn-sala {
+  width: 50%;
+}
+
+.salas {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+}
+
+.s {
+  display: flex;
+  justify-content: center;
+}

@@ -24,3 +24,13 @@
   display: flex;
   justify-content: center;
 }
+
+.room {
+  margin-top: 20px;
+  width: 20%;
+}
+
+.players{
+  display: flex;
+  justify-content: center;
+}

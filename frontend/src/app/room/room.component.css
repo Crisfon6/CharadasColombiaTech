@@ -1,0 +1,9 @@
+.container {
+    width: 500px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.status {
+    flex: 1 0 auto;
+}

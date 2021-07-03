@@ -1,34 +1,37 @@
 <div class="title">
-    <h1>Un jueguito muy cheveron</h1>
+  <h1>Un jueguito muy cheveron</h1>
 </div>
 <div class="dybo">
-    <div class="mycont">
-        <div *ngFor="let user of dataUser">
-            <app-person (newItemEvent)="res($event)" [dataUser]="user" [room]="room"> </app-person>
-        </div>
+  <div class="mycont">
+    <div *ngFor="let user of dataUser">
+      <app-person (newItemEvent)="res($event)" [dataUser]="user" [room]="room">
+      </app-person>
     </div>
+  </div>
 </div>
 
 <div class="mensaje">
-    <div class="btn btn-success" *ngIf="win">
-        <h4>{{message}}</h4>
-    </div>
+  <div class="btn btn-success" *ngIf="win">
+    <h4>{{ message }}</h4>
+  </div>
 
-    <div class="btn btn-danger" *ngIf="lose">
-        <h4>{{message}}</h4>
-    </div>
+  <div class="btn btn-danger" *ngIf="lose">
+    <h4>{{ message }}</h4>
+  </div>
 </div>
 
 <div>
-    <app-ask (newItemEvent)="e($event)" [usersData]="dataUser"> </app-ask>
+  <app-ask (newItemEvent)="e($event)" [usersData]="dataUser"> </app-ask>
 </div>
 
-
-<ul *ngIf="!isLoading">
-    <li *ngFor="let player of room.players  ">
-        {{player.player }}
-        <div *ngIf="!player.active">Die</div>
-        <div *ngIf="player.active"> Live</div>
-        <!-- <button (click)="wrong()"> wrong</button> -->
-    </li>
-</ul>
+<div class="players">
+  <div class="room">
+    <ul class="list-group list-group-flush" *ngIf="!isLoading">
+      <li class="list-group-item" *ngFor="let player of room.players">
+        {{ player.player }}
+        <div class="btn btn-danger" *ngIf="!player.active">Die</div>
+        <div class="btn btn-success" *ngIf="player.active">Live</div>
+      </li>
+    </ul>
+  </div>
+</div>

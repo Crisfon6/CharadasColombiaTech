@@ -1,10 +1,16 @@
-<h1>Lobby</h1>
-<ul *ngIf="!isLoading">
-    <li *ngFor="let player of room.players  ">
-        {{player.player }}
-        <div *ngIf="!player.active">Die</div>
-        <div *ngIf="player.active"> Live</div>
+<div class="card container">
+    <h1>Lobby</h1>
+  <div class="room">
+
+    <ul class="list-group list-group-flush" *ngIf="!isLoading">
+      <li class="list-group-item" *ngFor="let player of room.players">
+        {{ player.player }}
+        <span class="status"></span>
+        <div class="btn btn-danger" *ngIf="!player.active">Die</div>
+        <div class="btn btn-success" *ngIf="player.active">Live</div>
         <!-- <button (click)="wrong()"> wrong</button> -->
-    </li>
-</ul>
-<button (click)="start()">Start</button>
+      </li>
+    </ul>
+  </div>
+  <button class="btn btn-primary" (click)="start()">Start</button>
+</div>
