@@ -31,16 +31,14 @@ export class PersonComponent implements OnInit {
   socketWork(){
     this.game = this.socketService.getRoom(this.idRoom);
     this.roomSub = this.socketService.currentRoom.subscribe(room=>{
-      console.log('subscribe');
-      console.log('ROOM',room);
       this.room =room;
-      this.isLoading=false;
       this.user = room.players.find((el:any)=>
-        el.player===this.playerUsername
+      el.player===this.playerUsername
       )
-      console.log('USERXX',this.user);
-      this.room = room});
-  console.log('ROOMSUB',this.roomSub);
+      
+      this.room = room
+      this.isLoading=false;
+    });
   }
   ngOnInit(): void {
     this.socketWork();

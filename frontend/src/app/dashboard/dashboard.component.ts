@@ -37,8 +37,6 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('profiles', profiles);
-    console.log('IDROOM', this.idRoom);
     this.socketWork();
   }
 
@@ -49,8 +47,6 @@ export class DashboardComponent implements OnInit {
   socketWork() {
     this.game = this.socketService.getRoom(this.idRoom);
     this.roomSub = this.socketService.currentRoom.subscribe((room) => {
-      console.log('subscribe');
-      console.log('ROOM', room);
       this.room = room;
       this.isLoading = false;
 
@@ -58,26 +54,21 @@ export class DashboardComponent implements OnInit {
 
       this.youWon(this.room.players);
     });
-    console.log('ROOMSUB', this.roomSub);
   }
   res(event: any) {
-    console.log(event);
     if (this.answer === event) {
       this.win = true;
       this.message = 'Ganaste';
-      console.log(this.message);
       this.closeAlert();
     } else {
       this.lose = true;
       this.message = 'Perdiste';
-      console.log(this.message);
       this.wrong();
       this.closeAlert();
     }
   }
 
   e(event: any) {
-    console.log(event);
     this.answer = event;
   }
   youWon(player: any) {

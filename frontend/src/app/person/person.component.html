@@ -21,6 +21,6 @@
     </div>
 </div>
 
-<div class="select">
-    <button class="btn btn-primary" (click)="seleccion(dataUser.id)" *ngIf="user.active">{{dataUser.name}}</button>
+<div class="select" *ngIf="!isLoading">
+    <button class="btn btn-primary" (click)="seleccion(dataUser.id)" *ngIf="user.active ">{{dataUser.name}}</button>
 </div>

@@ -26,13 +26,10 @@ export class RoomComponent implements OnInit {
     ngOnInit(): void {
       this.game = this.socketService.getRoom(this.idRoom);
     this.roomSub = this.socketService.currentRoom.subscribe(room=>{
-      console.log('subscribe');
-      console.log('ROOM',room);
       this.room =room;
       this.isLoading=false;
   
       this.room = room});
-  console.log('ROOMSUB',this.roomSub);
   
   
   

@@ -25,7 +25,6 @@ export class LobbyComponent implements OnInit {
     this.data = {};
     this.roomId = '';
     this.rooms = this.socketService.rooms;
-    console.log('rooms', this.rooms);
 
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -33,21 +32,13 @@ export class LobbyComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //  this.roomId = this.route.snapshot.params.id;
-    //  this.socketService.rooms.subscribe(rooms=>{
-    //    console.log('ROOMS',rooms);
-    //   //  this.rooms =rooms;
-    //  })
-    // this.cookieService.set('room',this.room);
+
   }
   go(roomId: any, username: any) {
-    console.log('USERNAME', username.value);
-    console.log('ROOMID', roomId.id);
     this.socketService.addPlayer(roomId.id, username.value);
     this.router.navigateByUrl(`room/${roomId.id}/${username.value}`);
   }
   send() {
     this.socketService.createRoom(this.form.value.name);
-    console.log('rooms', this.rooms);
   }
 }
